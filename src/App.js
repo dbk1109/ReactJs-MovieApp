@@ -1,54 +1,46 @@
 import React from "react";
+import axios from "axios";
+import Movie from "./Movie";
 
 class App extends React.Component {
   state = {
     isloading: true,
-    movies: [
-      {
-        id: 1,
-        name: "IMac",
-        image:
-          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-og-202008?wid=600&hei=315&fmt=jpeg&qlt=95&.v=1594849639000",
-        rating: 4.3,
+    movies: [],
+  };
+  getMovies = async () => {
+    const {
+      data: {
+        data: { movies },
       },
-      {
-        id: 2,
-        name: "MacBook",
-        image:
-          "https://cdn.cnn.com/cnnnext/dam/assets/201116214842-13-macbook-air-review-silicon-underscoredjpg.jpg",
-        rating: 3,
-      },
-      {
-        id: 3,
-        name: "IPad",
-        image:
-          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-wifi-spacegray-202104_FMT_WHH?wid=1945&hei=2000&fmt=jpeg&qlt=95&.v=1617126635000",
-        rating: 1.3,
-      },
-      {
-        id: 4,
-        name: "IPhone",
-        image:
-          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&.v=1567022175704",
-        rating: 4,
-      },
-      {
-        id: 5,
-        name: "Apple Watch",
-        image:
-          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/40-alum-gold-sport-pinksand-6s-nc?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1599810781000",
-        rating: 3.8,
-      },
-    ],
+    } = await axios.get(
+      "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
+    );
+    this.setState({ movies, isloading: false });
   };
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isloading: false });
-    }, 2000);
+    this.getMovies();
   }
   render() {
-    const { isloading } = this.state;
-    return <div>{this.state.isloading ? "Loading..." : "We are rady"}</div>;
+    const { isloading, movies } = this.state;
+    return (
+      <div>
+        {this.state.isloading
+          ? "Loading..."
+          : movies.map((movie) => {
+              console.log(movie);
+              return (
+                <Movie
+                  key={movie.id}
+                  id={movie.id}
+                  year={movie.year}
+                  title={movie.title}
+                  summary={movie.summary}
+                  poster={movie.medium_cover_image}
+                />
+              );
+            })}
+      </div>
+    );
   }
 }
 
