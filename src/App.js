@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
+import "./Movie.css";
 
 class App extends React.Component {
   state = {
@@ -23,23 +24,32 @@ class App extends React.Component {
   render() {
     const { isloading, movies } = this.state;
     return (
-      <div>
-        {this.state.isloading
-          ? "Loading..."
-          : movies.map((movie) => {
-              console.log(movie);
-              return (
-                <Movie
-                  key={movie.id}
-                  id={movie.id}
-                  year={movie.year}
-                  title={movie.title}
-                  summary={movie.summary}
-                  poster={movie.medium_cover_image}
-                />
-              );
-            })}
-      </div>
+      <section className="container">
+        {isloading ? (
+          <div className="loader">
+            <img
+              src="https://blog.teamtreehouse.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif"
+              alt="Loading..."
+              className="loader__img"
+            />
+          </div>
+        ) : (
+          <div className="movies">
+            {movies.map((movie) => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                year={movie.year}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
+                genres={movie.genres}
+                rating={movie.rating}
+              />
+            ))}
+          </div>
+        )}
+      </section>
     );
   }
 }
