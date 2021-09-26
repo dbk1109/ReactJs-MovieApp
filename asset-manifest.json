@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/restart-app/static/css/main.fcce70f7.chunk.css",
-    "main.js": "/restart-app/static/js/main.c6515a6b.chunk.js",
-    "main.js.map": "/restart-app/static/js/main.c6515a6b.chunk.js.map",
+    "main.css": "/restart-app/static/css/main.75aadc65.chunk.css",
+    "main.js": "/restart-app/static/js/main.aecc28e4.chunk.js",
+    "main.js.map": "/restart-app/static/js/main.aecc28e4.chunk.js.map",
     "runtime-main.js": "/restart-app/static/js/runtime-main.8154fcee.js",
     "runtime-main.js.map": "/restart-app/static/js/runtime-main.8154fcee.js.map",
-    "static/js/2.aad5a04a.chunk.js": "/restart-app/static/js/2.aad5a04a.chunk.js",
-    "static/js/2.aad5a04a.chunk.js.map": "/restart-app/static/js/2.aad5a04a.chunk.js.map",
+    "static/js/2.a4afd5eb.chunk.js": "/restart-app/static/js/2.a4afd5eb.chunk.js",
+    "static/js/2.a4afd5eb.chunk.js.map": "/restart-app/static/js/2.a4afd5eb.chunk.js.map",
     "index.html": "/restart-app/index.html",
-    "static/css/main.fcce70f7.chunk.css.map": "/restart-app/static/css/main.fcce70f7.chunk.css.map",
-    "static/js/2.aad5a04a.chunk.js.LICENSE.txt": "/restart-app/static/js/2.aad5a04a.chunk.js.LICENSE.txt"
+    "static/css/main.75aadc65.chunk.css.map": "/restart-app/static/css/main.75aadc65.chunk.css.map",
+    "static/js/2.a4afd5eb.chunk.js.LICENSE.txt": "/restart-app/static/js/2.a4afd5eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8154fcee.js",
-    "static/js/2.aad5a04a.chunk.js",
-    "static/css/main.fcce70f7.chunk.css",
-    "static/js/main.c6515a6b.chunk.js"
+    "static/js/2.a4afd5eb.chunk.js",
+    "static/css/main.75aadc65.chunk.css",
+    "static/js/main.aecc28e4.chunk.js"
   ]
 }
