@@ -12,23 +12,20 @@
 
   const root = document.getElementById("root");
   let counter = 0;
-  const TItle = () => ( // = function TItle() {return (...)}
-    <h3 id="btn" onMouseEnter={() => console.log("enter")}>
-      Total Clicks :
-    </h3>
-  );
-  const Button = () => (
-    <button style={{ backgroundColor: "tomato", }} onClick={() => counter++}>Click me</button>
-  );
-  //const container = React.createElement("div", null, [TItle, Button]);
-  //const Container = <div><TItle /> <Button /></div>
+  function countUp() {
+    counter = counter + 1;
+    render();
+  }
+  function render() {
+    ReactDOM.render(<Container />, root);
+  }
   const Container = () => (
     <div>
-      <TItle />
-      <Button />
+      <h3> Total Clicks : {counter}</h3>
+      <button onClick={countUp}>Click me</button>
     </div>
   );
-  ReactDOM.render(<Container />, root);
+  render();
 
 </script>
 
